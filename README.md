@@ -1,6 +1,7 @@
 # Java Compiler for Termux
-[![banner-termux-fpc.jpg](https://i.postimg.cc/3NcKMwy0/banner-termux-fpc.jpg)](https://postimg.cc/BP2WH4BJ)<br>
+[![banner-termux-java.jpg](https://i.postimg.cc/c49CbwtL/banner-termux-java.jpg)](https://postimg.cc/QH7jBBq2)<br>
 Skrip ini berfungsi untuk meng-compile dan meng-execute program java di Termux.
+Skrip ini menggabungkan fungsi ecj dan dx sehingga kita dapat mengcompile dan mengexecute program java bersamaan
 <br>
 <p align=center>
 <img src="https://img.shields.io/badge/Created%20by-tfkhdyt-blue?style=for-the-badge&logo=github"/><br>
