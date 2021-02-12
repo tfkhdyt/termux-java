@@ -1,6 +1,6 @@
-# Free Pascal Compiler for Termux
+# Java Compiler for Termux
 [![banner-termux-fpc.jpg](https://i.postimg.cc/3NcKMwy0/banner-termux-fpc.jpg)](https://postimg.cc/BP2WH4BJ)<br>
-Skrip ini berfungsi untuk meng-compile dan meng-execute program pascal di Termux.
+Skrip ini berfungsi untuk meng-compile dan meng-execute program java di Termux.
 <br>
 <p align=center>
 <img src="https://img.shields.io/badge/Created%20by-tfkhdyt-blue?style=for-the-badge&logo=github"/><br>
@@ -18,13 +18,13 @@ Skrip ini berfungsi untuk meng-compile dan meng-execute program pascal di Termux
 
 ## Instalasi
 ```Bash
-git clone https://github.com/tfkhdyt/termux-fpc.git && cd termux-fpc && ./install.sh
+git clone https://github.com/tfkhdyt/termux-java.git && cd termux-java && ./install.sh
 ```
 ## Cara penggunaan
 ```Bash
-pas [nama_file.pas]
+java [nama_file.pas]
 # contoh
-pas gaji.pas
+java Pinjaman.pas
 ```
 
 ## Informasi lebih lanjut
