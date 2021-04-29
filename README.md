@@ -25,7 +25,7 @@ git clone https://github.com/tfkhdyt/termux-java.git && cd termux-java && ./inst
 ```Bash
 java [nama_file.pas]
 # contoh
-java Pinjaman.pas
+java Pinjaman.java
 ```
 
 ## Informasi lebih lanjut
