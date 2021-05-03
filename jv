@@ -1,23 +1,33 @@
 #!/usr/bin/bash
-complete -A directory jv
-clear
-file=$1
-cp $file ~/.java/
-cd ~/.java/
-ecj $file
-printf "\nApakah anda ingin menjalankan programnya? [y/n] : "
-read konf
-if [[ $konf = "y" ]]; then
+if [[ $# -eq 1 ]]; then
+	clear
+	file=$1
+	cp $file ~/.java/
+	cd ~/.java/
+	ecj $file
+	printf "\nApakah anda ingin menjalankan programnya? [y/n] : "
+	read konf
+	if [[ $konf = "y" ]]; then
+		dx --dex --output="${file%.*}.dex" "${file%.*}.class"
+		clear
+		dalvikvm -cp "${file%.*}.dex" "${file%.*}" 
+		rm -rf *.dex *.class oat
+	elif [[ $konf = "n" ]]; then
+		clear
+		echo "Selesai"
+		rm -rf *.dex *.class oat
+	else
+		clear
+		echo "Error"
+		rm -rf *.dex *.class oat
+	fi
+elif [[ $# -eq 2 && "$2" == "-f" ]]; then
+	clear
+	file=$1
+	cp $file ~/.java/
+	cd ~/.java/
+	ecj $file
 	dx --dex --output="${file%.*}.dex" "${file%.*}.class"
-	clear
 	dalvikvm -cp "${file%.*}.dex" "${file%.*}" 
-	rm -rf *.dex *.class oat
-elif [[ $konf = "n" ]]; then
-	clear
-	echo "Selesai"
-	rm -rf *.dex *.class oat
-else
-	clear
-	echo "Error"
 	rm -rf *.dex *.class oat
 fi

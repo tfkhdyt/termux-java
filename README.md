@@ -24,9 +24,14 @@ git clone https://github.com/tfkhdyt/termux-java.git && cd termux-java && ./inst
 ```
 ## Cara penggunaan
 ```Bash
-jv [nama_file.pas]
+jv [nama_file.java]
 # contoh
 jv Pinjaman.java
+
+# untuk compile & execute secara paksa (tanpa konfirmasi)
+jv [nama_file.java] -f
+# contoh
+jv quiz.java -f
 ```
 
 ## Informasi lebih lanjut
