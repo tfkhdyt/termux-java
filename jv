@@ -1,18 +1,17 @@
 #!/usr/bin/bash
 clear
 file=$1
-cp $file ~/.java/
-cd ~/.java/
+#cp $file ~/.java/
+#cd ~/.java/
 echo "Proses sedang berjalan..."
 ecj $file 2> hasil.txt
 if [ -s hasil.txt ]; then
 	clear
-	echo "Error found!"
+	echo "ERROR FOUND!"
 	cat hasil.txt
 else
 	clear
 	dx --dex --output="${file%.*}.dex" "${file%.*}.class"
 	dalvikvm -cp "${file%.*}.dex" "${file%.*}" 
 fi
-rm -rf *.dex *.class oat *.java
-rm hasil.txt
+rm -rf *.dex *.class oat hasil.txt
