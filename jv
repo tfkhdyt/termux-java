@@ -6,7 +6,6 @@ if [[ $# -eq 1 ]]; then
 	cd ~/.java/
 	echo "Proses sedang berjalan..."
 	ecj $file
-	clear
 	printf "Apakah anda ingin menjalankan programnya? [y/n] : "
 	read konf
 	if [[ $konf = "y" ]]; then
@@ -28,6 +27,7 @@ elif [[ $# -eq 2 && "$2" == "-f" ]]; then
 	file=$1
 	cp $file ~/.java/
 	cd ~/.java/
+	echo "Proses sedang berjalan..."
 	ecj $file
 	dx --dex --output="${file%.*}.dex" "${file%.*}.class"
 	dalvikvm -cp "${file%.*}.dex" "${file%.*}" 
