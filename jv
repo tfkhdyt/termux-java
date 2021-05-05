@@ -4,8 +4,10 @@ if [[ $# -eq 1 ]]; then
 	file=$1
 	cp $file ~/.java/
 	cd ~/.java/
+	echo "Proses sedang berjalan..."
 	ecj $file
-	printf "\nApakah anda ingin menjalankan programnya? [y/n] : "
+	clear
+	printf "Apakah anda ingin menjalankan programnya? [y/n] : "
 	read konf
 	if [[ $konf = "y" ]]; then
 		dx --dex --output="${file%.*}.dex" "${file%.*}.class"
