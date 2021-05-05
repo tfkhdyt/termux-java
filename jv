@@ -1,35 +1,18 @@
 #!/usr/bin/bash
-if [[ $# -eq 1 ]]; then
+clear
+file=$1
+cp $file ~/.java/
+cd ~/.java/
+echo "Proses sedang berjalan..."
+ecj $file 2> hasil.txt
+if [ -s hasil.txt ]; then
 	clear
-	file=$1
-	cp $file ~/.java/
-	cd ~/.java/
-	echo "Proses sedang berjalan..."
-	ecj $file
-	printf "Apakah anda ingin menjalankan programnya? [y/n] : "
-	read konf
-	if [[ $konf = "y" ]]; then
-		dx --dex --output="${file%.*}.dex" "${file%.*}.class"
-		clear
-		dalvikvm -cp "${file%.*}.dex" "${file%.*}" 
-		rm -rf *.dex *.class oat
-	elif [[ $konf = "n" ]]; then
-		clear
-		echo "Selesai"
-		rm -rf *.dex *.class oat
-	else
-		clear
-		echo "Error"
-		rm -rf *.dex *.class oat
-	fi
-elif [[ $# -eq 2 && "$2" == "-f" ]]; then
+	echo "Error found!"
+	cat hasil.txt
+else
 	clear
-	file=$1
-	cp $file ~/.java/
-	cd ~/.java/
-	echo "Proses sedang berjalan..."
-	ecj $file
 	dx --dex --output="${file%.*}.dex" "${file%.*}.class"
 	dalvikvm -cp "${file%.*}.dex" "${file%.*}" 
-	rm -rf *.dex *.class oat
 fi
+rm -rf *.dex *.class oat *.java
+rm hasil.txt

@@ -27,11 +27,6 @@ git clone https://github.com/tfkhdyt/termux-java.git && cd termux-java && ./inst
 jv [nama_file.java]
 # contoh
 jv Pinjaman.java
-
-# untuk compile & execute secara paksa (tanpa konfirmasi)
-jv [nama_file.java] -f
-# contoh
-jv quiz.java -f
 ```
 
 ## Informasi lebih lanjut
